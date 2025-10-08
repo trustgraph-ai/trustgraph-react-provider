@@ -116,4 +116,6 @@ Throws: Error if used outside SocketProvider
 
 ## License
 
-MIT
+Apache 2.0
+
+(c) KnowNext Inc., KnowNext Limited 2025
