@@ -65,9 +65,9 @@ describe("useSocket", () => {
 
     requiredMethods.forEach((method) => {
       expect(result.current).toHaveProperty(method);
-      expect(typeof (result.current as unknown as Record<string, unknown>)[method]).toBe(
-        "function",
-      );
+      expect(
+        typeof (result.current as unknown as Record<string, unknown>)[method],
+      ).toBe("function");
     });
   });
 

@@ -40,10 +40,12 @@ describe("useConnectionState", () => {
   it("should update when connection state changes", () => {
     let capturedCallback: ((state: unknown) => void) | null = null;
 
-    mockSocket.onConnectionStateChange.mockImplementation((callback: (state: unknown) => void) => {
-      capturedCallback = callback;
-      return vi.fn();
-    });
+    mockSocket.onConnectionStateChange.mockImplementation(
+      (callback: (state: unknown) => void) => {
+        capturedCallback = callback;
+        return vi.fn();
+      },
+    );
 
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <SocketProvider user="test-user">{children}</SocketProvider>
@@ -83,10 +85,12 @@ describe("useConnectionState", () => {
   it("should update to different connection states", () => {
     let capturedCallback: ((state: unknown) => void) | null = null;
 
-    mockSocket.onConnectionStateChange.mockImplementation((callback: (state: unknown) => void) => {
-      capturedCallback = callback;
-      return vi.fn();
-    });
+    mockSocket.onConnectionStateChange.mockImplementation(
+      (callback: (state: unknown) => void) => {
+        capturedCallback = callback;
+        return vi.fn();
+      },
+    );
 
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <SocketProvider user="test-user">{children}</SocketProvider>

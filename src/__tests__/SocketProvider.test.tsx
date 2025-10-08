@@ -15,8 +15,9 @@ const mockSocket = {
 const mockCreateTrustGraphSocket = vi.fn(() => mockSocket);
 
 vi.mock("@trustgraph/client", () => ({
-  createTrustGraphSocket: (...args: Parameters<typeof mockCreateTrustGraphSocket>) =>
-    mockCreateTrustGraphSocket(...args),
+  createTrustGraphSocket: (
+    ...args: Parameters<typeof mockCreateTrustGraphSocket>
+  ) => mockCreateTrustGraphSocket(...args),
 }));
 
 // Test component that uses the hooks
@@ -122,10 +123,12 @@ describe("SocketProvider", () => {
     const onConnectionStateChange = vi.fn();
     let capturedCallback: ((state: unknown) => void) | null = null;
 
-    mockSocket.onConnectionStateChange.mockImplementation((callback: (state: unknown) => void) => {
-      capturedCallback = callback;
-      return vi.fn();
-    });
+    mockSocket.onConnectionStateChange.mockImplementation(
+      (callback: (state: unknown) => void) => {
+        capturedCallback = callback;
+        return vi.fn();
+      },
+    );
 
     render(
       <SocketProvider
