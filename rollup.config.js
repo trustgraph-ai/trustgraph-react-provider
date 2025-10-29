@@ -16,7 +16,12 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ["react", "@trustgraph/client"],
+  external: [
+    "react",
+    "react-dom",
+    "react/jsx-runtime",
+    "@trustgraph/client",
+  ],
   plugins: [
     resolve(),
     commonjs(),
