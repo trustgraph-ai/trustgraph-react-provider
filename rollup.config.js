@@ -23,7 +23,10 @@ export default {
     "@trustgraph/client",
   ],
   plugins: [
-    resolve(),
+    resolve({
+      // Don't resolve symlinked packages - treat them as external
+      resolveOnly: [/^(?!@trustgraph)/],
+    }),
     commonjs(),
     typescript({
       tsconfig: "./tsconfig.json",

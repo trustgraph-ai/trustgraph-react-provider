@@ -16,4 +16,4 @@ export { useConnectionState } from "./hooks/useConnectionState";
 export type { SocketProviderProps } from "./types";
 
 // Re-export types from @trustgraph/client for convenience
-export type { BaseApi, ConnectionState } from "@trustgraph/client";
+export type { BaseApi, ConnectionState, StreamingMetadata } from "@trustgraph/client";
